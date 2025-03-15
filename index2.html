@@ -1,4 +1,160 @@
+
+
+
+
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Superpuestos con Relación 16:9</title>
+    <style>
+        body {
+            margin: 20vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            width: 88.89vh;
+            height: 50vh;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #div1banner,
+        #div4banner,
+        #div3banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #div1banner {
+            background-color: green;
+            z-index: 3;
+        }
+
+        #div4banner {
+            background-color: transparent;
+            z-index: 4;
+            animation: move-right 2s linear 1s forwards;
+        }
+
+        #div4banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #div3banner img,
+        #div1banner img {
+            width: 88.89vh;
+            height: 100%;
+            position: relative;
+            object-fit: cover;
+        }
+
+        #div3banner {
+            background-color: red;
+            z-index: 2;
+            text-align: center;
+            overflow: hidden;
+            transform-origin: left;
+            animation: reduce-width-right 2s linear 1s forwards;
+        }
+
+        #div3banner h1 {
+            font-size: 6vw;
+            color: white;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        #scroll {
+            text-align: center;
+            font-size: 6rem;
+            color: #555;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes reduce-width-right {
+            from {
+                width: 0%;
+                z-index: 5;
+            }
+            to {
+                width: 100%;
+                z-index: 5;
+            }
+        }
+
+        @keyframes move-right {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 88.89vw;
+                height: calc(88.89vw * 9 / 16);
+            }
+
+            #div3banner h1 {
+                font-size: 8vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+                height: calc(100vw * 9 / 16);
+            }
+
+            #div3banner h1 {
+                font-size: 6vw;
+            }
+
+            #div4banner img {
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="div1banner">
+            <img src="./public/images/Marquez.png" alt="" srcset="">
+        </div>
+
+        <div id="div3banner">
+            <img src="./public/images/Marquez2.png" alt="">
+        </div>
+        <div id="div4banner">
+            <img src="./public/images/rodillo.png" alt="Imagen Rodillo">
+        </div>
+
+    </div>
+
+    <div id="scroll">
+        Please scroll down
+    </div>
+</body>
+
+</html> 
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +168,13 @@
             height: 200vh;
         }
 
-        #red-section {
+        #uno {
+            height: 110vh;
+            width: 100vw;
+            background-color: red;
+        }
+
+        #tres {
             height: 50vh;
             background-color: transparent;
             position: absolute;
@@ -21,7 +183,7 @@
             z-index: 2;
         }
 
-        #gray {
+        #div4 {
             flex: 1;
             height: 100%;
             background-color: lightgray;
@@ -29,7 +191,7 @@
             transition: transform 0.5s, height 0.5s;
         }
 
-        #blue {
+        #div5 {
             flex: 1;
             height: 100%;
             background-color: lightblue;
@@ -37,7 +199,7 @@
             transition: transform 0.5s, height 0.5s;
         }
 
-        #green {
+        #div6 {
             flex: 1;
             height: 100%;
             background-color: lightgreen;
@@ -45,7 +207,7 @@
             transition: transform 0.5s, height 0.5s;
         }
 
-        #coral {
+        #div7 {
             flex: 1;
             height: 100%;
             background-color: lightcoral;
@@ -53,7 +215,7 @@
             transition: transform 0.5s, height 0.5s;
         }
 
-        #yellow-section {
+        #dos {
             height: 50vh;
             width: 100vw;
             position: relative;
@@ -126,15 +288,23 @@
 </head>
 
 <body>
-    <div id="yellow-section"></div>
-    <div id="red-section">
-        <div id="gray"></div>
-        <div id="blue"></div>
-        <div id="green"></div>
-        <div id="coral"></div>
+    <div id="uno"></div>
+    <div id="tres">
+        <div id="div4">
+            <img src="./public/images/4.png" alt="Imagen Div 4" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div id="div5">
+            <img src="./public/images/5.png" alt="Imagen Div 5" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div id="div6">
+            <img src="./public/images/6.png" alt="Imagen Div 6" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div id="div7">
+            <img src="./public/images/7.png" alt="Imagen Div 7" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
     </div>
-    <div id="yellow-section">
-        <img src="./public/images/div2.png" alt="Imagen Amarillo" style="width: 100%; height: 100%; object-fit: cover;">
+    <div id="dos">
+        <img src="./public/images/div2.png" alt="Imagen del Div Dos" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
     <footer id="footer">
         <div class="logo">
@@ -164,31 +334,31 @@
     </footer>
     <script>
         document.addEventListener("scroll", () => {
-            const gray = document.getElementById("gray");
-            const blue = document.getElementById("blue");
-            const green = document.getElementById("green");
-            const coral = document.getElementById("coral");
+            const div4 = document.getElementById("div4");
+            const div5 = document.getElementById("div5");
+            const div6 = document.getElementById("div6");
+            const div7 = document.getElementById("div7");
 
-            const rectGray = gray.getBoundingClientRect();
-            const rectBlue = blue.getBoundingClientRect();
+            const rect4 = div4.getBoundingClientRect();
+            const rect5 = div5.getBoundingClientRect();
 
-            if (rectGray.top >= 0 && rectGray.bottom <= window.innerHeight) {
+            if (rect4.top >= 0 && rect4.bottom <= window.innerHeight) {
                 setTimeout(() => {
-                    gray.classList.add("reduce-up");
+                    div4.classList.add("reduce-up");
 
                     setTimeout(() => {
-                        if (rectBlue.top >= 0 && rectBlue.bottom <= window.innerHeight) {
-                            blue.classList.add("reduce-down");
+                        if (rect5.top >= 0 && rect5.bottom <= window.innerHeight) {
+                            div5.classList.add("reduce-down");
 
                             setTimeout(() => {
-                                const rectGreen = green.getBoundingClientRect();
-                                if (rectGreen.top >= 0 && rectGreen.bottom <= window.innerHeight) {
-                                    green.classList.add("reduce-up");
+                                const rect6 = div6.getBoundingClientRect();
+                                if (rect6.top >= 0 && rect6.bottom <= window.innerHeight) {
+                                    div6.classList.add("reduce-up");
 
                                     setTimeout(() => {
-                                        const rectCoral = coral.getBoundingClientRect();
-                                        if (rectCoral.top >= 0 && rectCoral.bottom <= window.innerHeight) {
-                                            coral.classList.add("reduce-down");
+                                        const rect7 = div7.getBoundingClientRect();
+                                        if (rect7.top >= 0 && rect7.bottom <= window.innerHeight) {
+                                            div7.classList.add("reduce-down");
                                         }
                                     }, 500);
                                 }
@@ -202,3 +372,158 @@
 </body>
 
 </html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Superpuestos con Relación 16:9</title>
+    <style>
+        body {
+            margin: 20vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            width: 88.89vh;
+            height: 50vh;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #div1banner,
+        #div4banner,
+        #div3banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #div1banner {
+            background-color: green;
+            z-index: 3;
+        }
+
+        #div4banner {
+            background-color: transparent;
+            z-index: 4;
+            animation: move-right 2s linear 1s forwards;
+        }
+
+        #div4banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #div3banner img,
+        #div1banner img {
+            width: 88.89vh;
+            height: 100%;
+            position: relative;
+            object-fit: cover;
+        }
+
+        #div3banner {
+            background-color: red;
+            z-index: 2;
+            text-align: center;
+            overflow: hidden;
+            transform-origin: left;
+            animation: reduce-width-right 2s linear 1s forwards;
+        }
+
+        #div3banner h1 {
+            font-size: 6vw;
+            color: white;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        #scroll {
+            text-align: center;
+            font-size: 6rem;
+            color: #555;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes reduce-width-right {
+            from {
+                width: 0%;
+                z-index: 5;
+            }
+            to {
+                width: 100%;
+                z-index: 5;
+            }
+        }
+
+        @keyframes move-right {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 88.89vw;
+                height: calc(88.89vw * 9 / 16);
+            }
+
+            #div3banner h1 {
+                font-size: 8vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+                height: calc(100vw * 9 / 16);
+            }
+
+            #div3banner h1 {
+                font-size: 6vw;
+            }
+
+            #div4banner img {
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="div1banner">
+            <img src="./public/images/Marquez.png" alt="" srcset="">
+        </div>
+
+        <div id="div3banner">
+            <img src="./public/images/Marquez2.png" alt="">
+        </div>
+        <div id="div4banner">
+            <img src="./public/images/rodillo.png" alt="Imagen Rodillo">
+        </div>
+
+    </div>
+
+    <div id="scroll">
+        Please scroll down
+    </div>
+</body>
+
+</html> -->
