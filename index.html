@@ -106,7 +106,7 @@
             flex: 1;
             height: 100%;
             width: 25%;
-            background-color: lightgray;
+            background-color: red;
             transform-origin: bottom;
             transition: transform 0.5s, height 0.5s;
         }
@@ -115,7 +115,7 @@
             flex: 1;
             height: 100%;
             width: 25%;
-            background-color: lightblue;
+            background-color: yellow;
             transform-origin: top;
             transition: transform 0.5s, height 0.5s;
         }
@@ -124,7 +124,7 @@
             flex: 1;
             height: 100%;
             width: 25%;
-            background-color: lightgreen;
+            background-color: green;
             transform-origin: bottom;
             transition: transform 0.5s, height 0.5s;
         }
@@ -133,7 +133,7 @@
             flex: 1;
             height: 100%;
             width: 25%;
-            background-color: lightcoral;
+            background-color: blue;
             transform-origin: top;
             transition: transform 0.5s, height 0.5s;
         }
@@ -142,7 +142,15 @@
             height: 50vh;
             width: 100%;
             position: relative;
+            display: flex;
+            justify-content: center;
+
             z-index: 1;
+        }
+
+        yellow-short {
+
+            display: none;
         }
 
         .reduce-up {
@@ -240,8 +248,9 @@
                 /* Mantén la relación 16:9 */
             }
 
-            .info, .services { 
-                display:none
+            .info,
+            .services {
+                display: none
             }
 
             #div3banner h1 {
@@ -264,6 +273,15 @@
             #div4banner img {
                 object-fit: cover;
             }
+
+            .yellow-short {
+                display: true;
+                height: 50vh;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                
+            }
         }
     </style>
 </head>
@@ -273,14 +291,17 @@
     <div class="container">
 
         <div id="div1banner">
-            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez.png/:/rs=w:1440,h:1440" alt="" srcset="">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez.png/:/rs=w:1440,h:1440"
+                alt="" srcset="">
         </div>
 
         <div id="div3banner">
-            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez2.png/:/rs=w:1440,h:1440" alt="">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez2.png/:/rs=w:1440,h:1440"
+                alt="">
         </div>
         <div id="div4banner">
-            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/rodillo.png/:/rs=w:1440,h:1440" alt="Imagen Rodillo">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/rodillo.png/:/rs=w:1440,h:1440"
+                alt="Imagen Rodillo">
         </div>
 
     </div>
@@ -299,11 +320,20 @@
         <div id="coral"></div>
     </div>
     <div id="yellow-section">
-        <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/div2.png/:/rs=w:1440,h:1440" alt="Imagen Amarillo" style="width: 100%; height: 100%; object-fit: cover;">
+        
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/logo.jpg/:/rs=w:1440,h:1440"
+                alt="" style=" height: 100%; object-fit: cover;">
+        
+
+        
+
+        </div>
+
     </div>
     <footer id="footer">
         <div class="logo">
-            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/logo.jpg/:/rs=w:1440,h:1440" alt="Logo" width="150">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/logo.jpg/:/rs=w:1440,h:1440"
+                alt="Logo" width="150">
         </div>
         <div class="info">
             <h3>Official Info</h3>
@@ -379,6 +409,3 @@
 </body>
 
 </html>
-
-
-
