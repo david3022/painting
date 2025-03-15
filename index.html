@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divs Superpuestos con Relación 16:9</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-    width: 100%; 
-    margin: 0; /* Quita los márgenes */
-    padding: 0;
-    overflow-x: hidden; /* Solo oculta el scroll horizontal */
-    background-color: #f0f0f0;
-}
+            width: 100%;
+            margin: 0;
+            /* Quita los márgenes */
+            padding: 0;
+            overflow-x: hidden;
+            /* Solo oculta el scroll horizontal */
+            background-color: #f0f0f0;
+        }
 
         .container {
 
             position: relative;
-            width: 88.89vh; /* Ancho calculado: 50vh * (16/9) */
-            height: 50vh; /* Altura fija */
+            width: 88.89vh;
+            /* Ancho calculado: 50vh * (16/9) */
+            height: 50vh;
+            /* Altura fija */
             overflow: hidden;
-            margin: 20vw auto; /* Centra horizontalmente */
+            margin: 20vw auto;
+            /* Centra horizontalmente */
         }
 
         #div1banner,
@@ -30,7 +36,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%; /* Ajusta al tamaño del contenedor */
+            height: 100%;
+            /* Ajusta al tamaño del contenedor */
         }
 
         #div1banner {
@@ -47,16 +54,18 @@
         #div4banner img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ajusta la imagen dentro del contenedor manteniendo las proporciones */
+            object-fit: contain;
+            /* Ajusta la imagen dentro del contenedor manteniendo las proporciones */
         }
 
         #div3banner img,
         #div1banner img {
-            
+
             width: 88.89vh;
             height: 100%;
-            position:relative;
-            object-fit: cover; /* Mantiene proporciones */
+            position: relative;
+            object-fit: cover;
+            /* Mantiene proporciones */
         }
 
         #div3banner {
@@ -205,6 +214,7 @@
                 width: 0%;
                 z-index: 5;
             }
+
             to {
                 width: 100%;
                 z-index: 5;
@@ -215,6 +225,7 @@
             from {
                 transform: translateX(0);
             }
+
             to {
                 transform: translateX(100%);
             }
@@ -223,8 +234,10 @@
         /* Media Queries para Responsividad */
         @media (max-width: 768px) {
             .container {
-                width: 88.89vw; /* Reduce el ancho en pantallas más pequeñas */
-                height: calc(88.89vw * 9 / 16); /* Mantén la relación 16:9 */
+                width: 88.89vw;
+                /* Reduce el ancho en pantallas más pequeñas */
+                height: calc(88.89vw * 9 / 16);
+                /* Mantén la relación 16:9 */
             }
 
             #div3banner h1 {
@@ -234,8 +247,10 @@
 
         @media (max-width: 480px) {
             .container {
-                width: 100vw; /* Ocupa todo el ancho en pantallas muy pequeñas */
-                height: calc(100vw * 9 / 16); /* Mantén la relación 16:9 */
+                width: 100vw;
+                /* Ocupa todo el ancho en pantallas muy pequeñas */
+                height: calc(100vw * 9 / 16);
+                /* Mantén la relación 16:9 */
             }
 
             #div3banner h1 {
@@ -254,14 +269,14 @@
     <div class="container">
 
         <div id="div1banner">
-            <img src="./public/images/Marquez.png" alt="" srcset="">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez.png/:/rs=w:1440,h:1440" alt="" srcset="">
         </div>
 
         <div id="div3banner">
-            <img src="./public/images/Marquez2.png" alt="">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/Marquez2.png/:/rs=w:1440,h:1440" alt="">
         </div>
         <div id="div4banner">
-            <img src="./public/images/rodillo.png" alt="Imagen Rodillo">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/rodillo.png/:/rs=w:1440,h:1440" alt="Imagen Rodillo">
         </div>
 
     </div>
@@ -280,11 +295,11 @@
         <div id="coral"></div>
     </div>
     <div id="yellow-section">
-        <img src="./public/images/div2.png" alt="Imagen Amarillo" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="http://127.0.0.1:5500/public/images/div2.png" alt="Imagen Amarillo" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
     <footer id="footer">
         <div class="logo">
-            <img src="./public/images/logo.jpg" alt="Logo" width="150">
+            <img src="https://img1.wsimg.com/isteam/ip/f76f31f7-c166-4ba5-b247-40cecaa5a46b/logo.jpg/:/rs=w:1440,h:1440" alt="Logo" width="150">
         </div>
         <div class="info">
             <h3>Official Info</h3>
@@ -356,7 +371,7 @@
 
 
 
-    
+
 </body>
 
 </html>
